@@ -372,6 +372,8 @@ static_check_license_headers()
 	# no files were changed
 	[ -z "$files" ] && info "No files found" && return
 
+	echo "THIS IS THE LICENSE CHECKING"
+	echo "$(pwd)"
 	local missing=$(egrep \
 		--exclude=".git/*" \
 		--exclude=".gitignore" \
