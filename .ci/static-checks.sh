@@ -309,7 +309,8 @@ static_check_rust_arch_specific()
 		return
 	fi
 
-	find . -type f -name "*.rs"  | egrep -v "target/|grpc-rs/|protocols/" | xargs rustfmt --check > /dev/null 2>&1
+	info "Running rustfmt\n"
+	find . -type f -name "*.rs"  | egrep -v "target/|grpc-rs/|protocols/" | xargs rustfmt --check
 
 	[ $? -eq 0 ] || die "crate not formatted by rustfmt."
 }
